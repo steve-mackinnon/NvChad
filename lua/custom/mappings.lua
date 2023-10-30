@@ -6,8 +6,10 @@ M.telescope = {
                        "Find git files" },
     ["<leader>o"] = { "<cmd> ClangdSwitchSourceHeader <CR>",
                       "Switch between source and header files" },
-    ["<leader>t"] = { "<cmd>Trouble<cr>",
+    ["<leader>tt"] = { "<cmd>TroubleToggle<cr>",
                       "Show trouble diagnostics" },
+    ["<leader><tab>"] = { "<cmd>Telescope buffers<CR>",
+                          "List open buffers" },
   }
 }
 
