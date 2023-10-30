@@ -27,4 +27,18 @@ M.dap = {
   }
 }
 
+M.clangd = {
+  n = {
+    ["<leader>fx"] = {
+      function()
+        vim.lsp.buf.code_action({
+          filter = function(a) return a.isPreferred end,
+          apply = true
+        })
+      end,
+      "Apply quickfix"
+    },
+  }
+}
+
 return M
