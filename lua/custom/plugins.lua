@@ -75,6 +75,19 @@ local plugins = {
       end
     end
   },
+  {
+    "nmac427/guess-indent.nvim",
+    opts = {},
+    lazy = false,
+  },
+  {
+    "Civitasv/cmake-tools.nvim",
+    opts = {
+      cmake_generate_options = {"-G Ninja"},
+    },
+    dependencies = "nvim-lua/plenary.nvim",
+    lazy = false,
+  },
 }
 
 return plugins
