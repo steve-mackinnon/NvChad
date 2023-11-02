@@ -6,5 +6,6 @@ M.plugins = "custom.plugins"
 M.mappings = require 'custom.mappings'
 
 vim.opt.expandtab = true
+vim.opt.relativenumber = true
 
 return M
