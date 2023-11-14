@@ -10,6 +10,29 @@ M.telescope = {
                       "Show trouble diagnostics" },
     ["<leader><tab>"] = { "<cmd>Telescope buffers<CR>",
                           "List open buffers" },
+    ["<leader>gg"] = {
+      function()
+        local current_path = vim.fn.expand("%:p:h")
+        local command = "a".. -- go into terminal mode
+                "cd ".. current_path .. "<CR>" ..
+                "lazygit<CR>" -- run tig
+        command = vim.api.nvim_replace_termcodes(command, true, false, true)
+        require('detour').Detour()
+        vim.cmd.terminal()          -- open a terminal buffer
+        vim.bo.bufhidden = 'delete' -- close the terminal when window closes
+        vim.api.nvim_feedkeys(command, "n", false)
+      end,
+    },
+    ["<leader>tm"] = {
+      function()
+        local command = "a"-- go into terminal mode
+        command = vim.api.nvim_replace_termcodes(command, true, false, true)
+        require('detour').Detour()
+        vim.cmd.terminal()
+        vim.bo.bufhidden = 'delete'
+        vim.api.nvim_feedkeys(command, "n", false)
+      end
+    },
   }
 }
 

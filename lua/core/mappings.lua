@@ -132,6 +132,7 @@ M.lspconfig = {
   n = {
     ["gD"] = {
       function()
+        require('detour').Detour()
         vim.lsp.buf.declaration()
       end,
       "LSP declaration",
@@ -139,6 +140,7 @@ M.lspconfig = {
 
     ["gd"] = {
       function()
+        require('detour').Detour()
         vim.lsp.buf.definition()
       end,
       "LSP definition",

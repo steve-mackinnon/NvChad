@@ -28,12 +28,17 @@ local plugins = {
         "clang-format",
         "codelldb",
         "cpptools",
-        "eslint",
         "prettier",
-        "typescript-language-server",
-        "ts-standard",
       }
     }
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    config = function ()
+      require("typescript-tools").setup()
+    end,
+    -- lazy = false,
   },
   {
     "folke/trouble.nvim",
@@ -86,6 +91,13 @@ local plugins = {
       cmake_generate_options = {"-G Ninja"},
     },
     dependencies = "nvim-lua/plenary.nvim",
+    lazy = false,
+  },
+  {
+    "carbon-steel/detour.nvim",
+    config = function ()
+       vim.keymap.set('n', '<c-w><enter>', ":Detour<cr>")
+    end,
     lazy = false,
   },
 }
