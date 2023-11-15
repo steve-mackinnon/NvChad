@@ -8,11 +8,12 @@ M.telescope = {
       "Switch between source and header files",
     },
     ["<leader>tt"] = { "<cmd>TroubleToggle<cr>", "Show trouble diagnostics" },
-   ["<leader><tab>"] = {
+    ["<leader><tab>"] = {
       function()
-        require('telescope.builtin').buffers({sort_mru = true, ignore_current_buffer = true})
+        require("telescope.builtin").buffers { sort_mru = true, ignore_current_buffer = true }
       end,
-      "List open buffers" },
+      "List open buffers",
+    },
     ["<leader>gg"] = {
       function()
         local current_path = vim.fn.expand "%:p:h"
@@ -38,7 +39,7 @@ M.telescope = {
         vim.bo.bufhidden = "delete"
         vim.api.nvim_feedkeys(command, "n", false)
       end,
-      "Launch terminal"
+      "Launch terminal",
     },
   },
 }
