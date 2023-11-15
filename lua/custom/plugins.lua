@@ -31,7 +31,7 @@ local plugins = {
         "prettier",
         "shellcheck",
         "stylua",
-        "tsstandard",
+        "ts-standard",
         "vim-language-server",
       },
     },
