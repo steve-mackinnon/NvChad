@@ -98,7 +98,6 @@ local plugins = {
     config = function ()
        vim.keymap.set('n', '<c-w><enter>', ":Detour<cr>")
     end,
-    lazy = false,
   },
 }
 
