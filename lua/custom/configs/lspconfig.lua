@@ -12,8 +12,19 @@ lspconfig.clangd.setup {
   end,
   capabilities = clangdCapabilities,
 }
-lspconfig.tsserver.setup {
-  root_dir = lspconfig.util.root_pattern('.git'),
-  on_attach = on_attach,
-  capabilities = capabilities,
+
+local servers = {
+  "tsserver",
+  "angular-language-server",
+  "html-lsp",
+  "cpptools",
+  "prettier",
+  "vim-language-server",
 }
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end

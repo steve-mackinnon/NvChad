@@ -9,8 +9,8 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     config = function(_, _)
-      require("core.utils").load_mappings("dap")
-    end
+      require("core.utils").load_mappings "dap"
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -29,13 +29,17 @@ local plugins = {
         "codelldb",
         "cpptools",
         "prettier",
-      }
-    }
+        "shellcheck",
+        "stylua",
+        "tsstandard",
+        "vim-language-server",
+      },
+    },
   },
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    config = function ()
+    config = function()
       require("typescript-tools").setup()
     end,
     -- lazy = false,
@@ -66,8 +70,8 @@ local plugins = {
     event = "VeryLazy",
     dependencies = "mfussenegger/nvim-dap",
     config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
+      local dap = require "dap"
+      local dapui = require "dapui"
       dapui.setup()
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
@@ -78,7 +82,7 @@ local plugins = {
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
       end
-    end
+    end,
   },
   {
     "nmac427/guess-indent.nvim",
@@ -88,15 +92,15 @@ local plugins = {
   {
     "Civitasv/cmake-tools.nvim",
     opts = {
-      cmake_generate_options = {"-G Ninja"},
+      cmake_generate_options = { "-G Ninja" },
     },
     dependencies = "nvim-lua/plenary.nvim",
     lazy = false,
   },
   {
     "carbon-steel/detour.nvim",
-    config = function ()
-       vim.keymap.set('n', '<c-w><enter>', ":Detour<cr>")
+    config = function()
+      vim.keymap.set("n", "<c-w><enter>", ":Detour<cr>")
     end,
   },
 }

@@ -1,9 +1,15 @@
 local null_ls = require("null-ls")
-local opts = {
-  sources = {
-    null_ls.builtins.formatting.clang_format,
-    null_ls.builtins.formatting.prettier,
-  }
+local formatting = null_ls.builtins.formatting
+local lint = null_ls.builtins.diagnostics
+
+local sources = {
+  formatting.prettier,
+  formatting.stylua,
+  lint.cppcheck,
+  lint.shellcheck,
 }
 
-return opts
+null_ls.setup {
+  debug = true,
+  sources = sources
+}
