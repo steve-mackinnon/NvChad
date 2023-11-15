@@ -8,7 +8,11 @@ M.telescope = {
       "Switch between source and header files",
     },
     ["<leader>tt"] = { "<cmd>TroubleToggle<cr>", "Show trouble diagnostics" },
-    ["<leader><tab>"] = { "<cmd>Telescope buffers<CR>", "List open buffers" },
+   ["<leader><tab>"] = {
+      function()
+        require('telescope.builtin').buffers({sort_mru = true, ignore_current_buffer = true})
+      end,
+      "List open buffers" },
     ["<leader>gg"] = {
       function()
         local current_path = vim.fn.expand "%:p:h"
