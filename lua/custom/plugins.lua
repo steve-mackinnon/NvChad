@@ -103,6 +103,11 @@ local plugins = {
       vim.keymap.set("n", "<c-w><enter>", ":Detour<cr>")
     end,
   },
+  {
+    "almo7aya/openingh.nvim",
+    opts = {},
+    lazy = false,
+  },
 }
 
 return plugins

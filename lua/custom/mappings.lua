@@ -41,6 +41,10 @@ M.telescope = {
       end,
       "Launch terminal",
     },
+    ["<leader>gf"] = { "<cmd>OpenInGHFile <CR>", "Open file on remote" },
+  },
+  v = {
+    ["<leader>gf"] = { "<cmd>OpenInGHFileLines <CR>", "Open file on remote" },
   },
 }
 
