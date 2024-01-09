@@ -23,6 +23,21 @@ local default_plugins = {
     init = function()
       require("core.utils").load_mappings "nvterm"
     end,
+    opts = function()
+      return {
+        terminals = {
+          shell = "fish",
+          type_opts = {
+            horizontal = { split_ratio = 0.2 },
+          },
+        },
+        behavior = {
+          autoclose_on_quit = {
+            enabled = true,
+          },
+        },
+      }
+    end,
     config = function(_, opts)
       require "base46.term"
       require("nvterm").setup(opts)
