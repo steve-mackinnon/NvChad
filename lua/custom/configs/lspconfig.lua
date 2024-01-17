@@ -15,8 +15,12 @@ lspconfig.clangd.setup {
 
 local servers = {
   "angularls",
+  "cmake",
+  "cssls",
+  "elmls",
   "tsserver",
   "html",
+  "svelte",
   "vimls",
 }
 
