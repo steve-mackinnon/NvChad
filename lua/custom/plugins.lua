@@ -37,6 +37,7 @@ local plugins = {
         "svelte-language-server",
         "stylua",
         "ts-standard",
+        "typescript-language-server",
         "vim-language-server",
       },
     },
