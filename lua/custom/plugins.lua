@@ -33,6 +33,7 @@ local plugins = {
         "elm-language-server",
         "elm-format",
         "prettier",
+        "rust-analyzer",
         "shellcheck",
         "svelte-language-server",
         "stylua",
