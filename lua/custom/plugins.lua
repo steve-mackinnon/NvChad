@@ -92,11 +92,6 @@ local plugins = {
     end,
   },
   {
-    "nmac427/guess-indent.nvim",
-    opts = {},
-    lazy = false,
-  },
-  {
     "Civitasv/cmake-tools.nvim",
     opts = {
       cmake_generate_options = { "-G Ninja" },
@@ -113,6 +108,16 @@ local plugins = {
   {
     "almo7aya/openingh.nvim",
     opts = {},
+    lazy = false,
+  },
+  {
+    "nmac427/guess-indent.nvim",
+    config = function()
+      require("guess-indent").setup {
+        auto_cmd = true,
+        override_editorconfig = true,
+      }
+    end,
     lazy = false,
   },
 }
