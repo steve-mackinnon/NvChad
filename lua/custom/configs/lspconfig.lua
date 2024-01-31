@@ -1,11 +1,14 @@
+local utils = require "custom.utils"
 local base = require "plugins.configs.lspconfig"
 local on_attach = base.on_attach
 local capabilities = base.capabilities
-local clangdCapabilities = base.capabilities
--- clangdCapabilities.offsetEncoding = "utf-16"
-local util = require "lspconfig/util"
 
+local lsp_util = require "lspconfig/util"
 local lspconfig = require "lspconfig"
+
+local clangdCapabilities = utils.copy_table(base.capabilities)
+clangdCapabilities.offsetEncoding = "utf-16"
+
 lspconfig.clangd.setup {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
@@ -18,7 +21,7 @@ lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "rust" },
-  root_dir = util.root_pattern "Cargo.toml",
+  root_dir = lsp_util.root_pattern "Cargo.toml",
   settings = {
     ["rust-analyzer"] = {
       cargo = {
