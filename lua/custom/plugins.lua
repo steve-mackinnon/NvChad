@@ -20,6 +20,7 @@ local plugins = {
         "angular-language-server",
         "clangd",
         "clang-format",
+        "clojure-lsp",
         "cmake-language-server",
         "codelldb",
         "cpptools",
@@ -94,6 +95,8 @@ local plugins = {
       vim.fn["mkdp#util#install"]()
     end,
   },
+  { "Olical/conjure", lazy = false },
+  { "kazhala/close-buffers.nvim", lazy = false },
 }
 
 return plugins

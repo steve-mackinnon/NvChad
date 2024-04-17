@@ -42,6 +42,7 @@ M.telescope = {
       "Launch terminal",
     },
     ["<leader>gf"] = { "<cmd>OpenInGHFile <CR>", "Open file on remote" },
+    ["<leader>cb"] = { "<cmd>BDelete! hidden<cr>", "Close all other buffers" },
   },
   v = {
     ["<leader>gf"] = { "<cmd>OpenInGHFileLines <CR>", "Open file on remote" },

@@ -33,6 +33,7 @@ lspconfig.rust_analyzer.setup {
 
 local servers = {
   "angularls",
+  "clojure_lsp",
   "cmake",
   "cssls",
   "elmls",
