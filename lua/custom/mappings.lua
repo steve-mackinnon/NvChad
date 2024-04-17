@@ -7,7 +7,7 @@ M.telescope = {
       "<cmd> ClangdSwitchSourceHeader <CR>",
       "Switch between source and header files",
     },
-    ["<leader>tt"] = { "<cmd>TroubleToggle<cr>", "Show trouble diagnostics" },
+    ["<leader>tt"] = { "<cmd>Trouble diagnostics toggle<cr>", "Show trouble diagnostics" },
     ["<leader><tab>"] = {
       function()
         require("telescope.builtin").buffers { sort_mru = true, ignore_current_buffer = true }
