@@ -12,25 +12,10 @@ clangdCapabilities.offsetEncoding = "utf-16"
 lspconfig.clangd.setup {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
-    -- client.resolved_capabilities.document_highlight = true
-    vim.api.nvim_exec(
-      [[
-          hi! LspCodeLens guifg=Grey guibg=NONE
-          hi! LspCodeLensText guifg=Grey guibg=NONE
-          hi! LspCodeLensTextSign guifg=Grey guibg=NONE
-          hi! LspCodeLensTextSeparator guifg=Grey guibg=NONE
-        ]],
-      false
-    )
-    -- on_attach(client, bufnr)
+    require("clangd_extensions.inlay_hints").setup_autocmd()
+    require("clangd_extensions.inlay_hints").set_inlay_hints()
+    on_attach(client, bufnr)
   end,
-  settings = {
-    clangd = {
-      highlight = {
-        inactive = true,
-      },
-    },
-  },
   capabilities = clangdCapabilities,
 }
 

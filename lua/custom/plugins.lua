@@ -27,6 +27,7 @@ local plugins = {
         "css-lsp",
         "elm-language-server",
         "elm-format",
+        "gopls",
         "prettier",
         "rust-analyzer",
         "shellcheck",
@@ -97,6 +98,7 @@ local plugins = {
   },
   { "Olical/conjure", lazy = false },
   { "kazhala/close-buffers.nvim", lazy = false },
+  { "p00f/clangd_extensions.nvim", lazy = true },
 }
 
 return plugins
