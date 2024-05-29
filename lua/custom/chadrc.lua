@@ -6,7 +6,7 @@ M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
 
 -- vim.opt.expandtab = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 vim.opt.shell = "fish"
 
 vim.opt.listchars = "tab:>-"
