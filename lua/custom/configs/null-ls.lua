@@ -11,7 +11,7 @@ local sources = {
   lint.shellcheck,
   lint.eslint,
   lint.tsc,
-  lint.yamllint,
+  -- lint.yamllint,
 }
 
 null_ls.setup {
