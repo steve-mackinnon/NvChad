@@ -98,7 +98,17 @@ local plugins = {
   },
   { "Olical/conjure", lazy = false },
   { "kazhala/close-buffers.nvim", lazy = false },
-  { "p00f/clangd_extensions.nvim", lazy = true },
+  {
+    "p00f/clangd_extensions.nvim",
+    lazy = true,
+    config = function()
+      require("clangd_extensions").setup {
+        inlay_hints = {
+          only_current_line = true,
+        },
+      }
+    end,
+  },
 }
 
 return plugins
