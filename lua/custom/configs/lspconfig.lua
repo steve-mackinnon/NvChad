@@ -40,6 +40,12 @@ lspconfig.rust_analyzer.setup {
   },
 }
 
+lspconfig.elixirls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "/Users/steve/bin/elixir-ls/language_server.sh" },
+}
+
 local servers = {
   "angularls",
   "clojure_lsp",
@@ -48,6 +54,7 @@ local servers = {
   "elmls",
   "tsserver",
   "html",
+  "pylsp",
   "svelte",
   "vimls",
   "gopls",
