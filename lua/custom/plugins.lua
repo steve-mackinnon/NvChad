@@ -14,12 +14,25 @@ local plugins = {
     end,
   },
   {
+    "nvim-telescope/telescope.nvim",
+    config = function()
+      require "plugins.configs.telescope"
+      require("telescope").load_extension "fzf"
+    end,
+  },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+  },
+
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
         "angular-language-server",
+        "black",
         "clangd",
-        "clang-format",
+        -- "clang-format",
         "clojure-lsp",
         "cmake-language-server",
         "codelldb",
@@ -28,7 +41,10 @@ local plugins = {
         "elm-language-server",
         "elm-format",
         "gopls",
+        "html-lsp",
+        "lua-language-server",
         "prettier",
+        "python-lsp-server",
         "rust-analyzer",
         "shellcheck",
         "svelte-language-server",
@@ -49,7 +65,6 @@ local plugins = {
   },
   {
     "folke/trouble.nvim",
-    branch = "dev",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       win = {
@@ -98,17 +113,17 @@ local plugins = {
   },
   { "Olical/conjure", lazy = false },
   { "kazhala/close-buffers.nvim", lazy = false },
-  {
-    "p00f/clangd_extensions.nvim",
-    lazy = true,
-    config = function()
-      require("clangd_extensions").setup {
-        inlay_hints = {
-          only_current_line = true,
-        },
-      }
-    end,
-  },
+  -- {
+  --   "p00f/clangd_extensions.nvim",
+  --   lazy = true,
+  --   config = function()
+  --     require("clangd_extensions").setup {
+  --       inlay_hints = {
+  --         only_current_line = true,
+  --       },
+  --     }
+  --   end,
+  -- },
 }
 
 return plugins
