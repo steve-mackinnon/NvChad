@@ -10,10 +10,17 @@ local clangdCapabilities = utils.copy_table(base.capabilities)
 clangdCapabilities.offsetEncoding = "utf-16"
 
 lspconfig.clangd.setup {
+  cmd = {
+    "clangd",
+    "--clang-tidy",
+    "--background-index",
+    "--completion-style=bundled",
+    "--header-insertion=iwyu",
+  },
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
-    require("clangd_extensions.inlay_hints").setup_autocmd()
-    require("clangd_extensions.inlay_hints").set_inlay_hints()
+    -- require("clangd_extensions.inlay_hints").setup_autocmd()
+    -- require("clangd_extensions.inlay_hints").set_inlay_hints()
     on_attach(client, bufnr)
   end,
   capabilities = clangdCapabilities,
@@ -44,6 +51,7 @@ local servers = {
   "svelte",
   "vimls",
   "gopls",
+  "pylsp",
 }
 
 for _, lsp in ipairs(servers) do
