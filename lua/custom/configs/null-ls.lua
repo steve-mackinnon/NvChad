@@ -3,6 +3,7 @@ local formatting = null_ls.builtins.formatting
 local lint = null_ls.builtins.diagnostics
 
 local sources = {
+  formatting.black,
   formatting.elm_format,
   formatting.prettier,
   formatting.stylua,
