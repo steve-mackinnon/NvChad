@@ -1,3 +1,5 @@
+local base = require "plugins.configs.lspconfig"
+
 local plugins = {
   {
     "jose-elias-alvarez/null-ls.nvim",
@@ -33,11 +35,13 @@ local plugins = {
         "black",
         "clangd",
         -- "clang-format",
+        "cljfmt",
         "clojure-lsp",
         "cmake-language-server",
         "codelldb",
         "cpptools",
         "css-lsp",
+        "elixir-ls",
         "elm-language-server",
         "elm-format",
         "gopls",
@@ -64,6 +68,22 @@ local plugins = {
     -- lazy = false,
   },
   {
+    "mrcjkb/rustaceanvim",
+    version = "^4",
+    ft = { "rust" },
+    dependencies = "neovim/nvim-lspconfig",
+    config = function()
+      require "custom.configs.rustaceanvim"
+    end,
+  },
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end,
+  },
+  {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
@@ -71,14 +91,6 @@ local plugins = {
         position = "right",
       },
     },
-    lazy = false,
-  },
-  {
-    "Civitasv/cmake-tools.nvim",
-    opts = {
-      cmake_generate_options = { "-G Ninja" },
-    },
-    dependencies = "nvim-lua/plenary.nvim",
     lazy = false,
   },
   {
@@ -111,7 +123,7 @@ local plugins = {
       vim.fn["mkdp#util#install"]()
     end,
   },
-  { "Olical/conjure", lazy = false },
+  -- { "Olical/conjure", lazy = false },
   { "kazhala/close-buffers.nvim", lazy = false },
   -- {
   --   "p00f/clangd_extensions.nvim",
@@ -124,6 +136,16 @@ local plugins = {
   --     }
   --   end,
   -- },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
 }
 
 return plugins

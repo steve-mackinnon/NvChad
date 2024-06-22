@@ -26,19 +26,19 @@ lspconfig.clangd.setup {
   capabilities = clangdCapabilities,
 }
 
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "rust" },
-  root_dir = lsp_util.root_pattern "Cargo.toml",
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = {
-        allFeatures = true,
-      },
-    },
-  },
-}
+-- lspconfig.rust_analyzer.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   filetypes = { "rust" },
+--   root_dir = lsp_util.root_pattern("Cargo.toml", "Cargo.lock"),
+--   settings = {
+--     ["rust-analyzer"] = {
+--       cargo = {
+--         allFeatures = true,
+--       },
+--     },
+--   },
+-- }
 
 lspconfig.elixirls.setup {
   on_attach = on_attach,
@@ -46,9 +46,14 @@ lspconfig.elixirls.setup {
   cmd = { "/Users/steve/bin/elixir-ls/language_server.sh" },
 }
 
+lspconfig.clojure_lsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  { "clojure", "edn", "cljs" },
+}
+
 local servers = {
   "angularls",
-  "clojure_lsp",
   "cmake",
   "cssls",
   "elmls",
