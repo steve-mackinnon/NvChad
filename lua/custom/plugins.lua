@@ -16,18 +16,6 @@ local plugins = {
     end,
   },
   {
-    "nvim-telescope/telescope.nvim",
-    config = function()
-      require "plugins.configs.telescope"
-      require("telescope").load_extension "fzf"
-    end,
-  },
-  {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-  },
-
-  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
