@@ -16,6 +16,26 @@ local plugins = {
     end,
   },
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "c",
+        "cmake",
+        "cpp",
+        "css",
+        "html",
+        "javascript",
+        "lua",
+        "python",
+        "rust",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+      },
+    },
+  },
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
@@ -41,6 +61,7 @@ local plugins = {
         "shellcheck",
         "svelte-language-server",
         "stylua",
+        "tailwindcss-language-server",
         "ts-standard",
         "typescript-language-server",
         "vim-language-server",
@@ -133,6 +154,12 @@ local plugins = {
         -- Configuration here, or leave empty to use defaults
       }
     end,
+  },
+  {
+    "luckasRanarison/tailwind-tools.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {}, -- your configuration
+    lazy = false,
   },
 }
 

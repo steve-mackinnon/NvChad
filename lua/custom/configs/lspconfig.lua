@@ -64,6 +64,7 @@ local servers = {
   "vimls",
   "gopls",
   "pylsp",
+  "tailwindcss",
 }
 
 for _, lsp in ipairs(servers) do
