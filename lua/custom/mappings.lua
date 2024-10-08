@@ -43,6 +43,10 @@ M.telescope = {
     },
     ["<leader>gf"] = { "<cmd>OpenInGHFile <CR>", "Open file on remote" },
     ["<leader>cb"] = { "<cmd>BDelete! hidden<cr>", "Close all other buffers" },
+    ["+"] = { "<cmd>resize +1<CR>", "Increase window height" },
+    ["_"] = { "<cmd>resize -1<CR>", "Decrease window height" },
+    ["{"] = { "<cmd>vertical resize +1<CR>", "Increase window width" },
+    ["}"] = { "<cmd>vertical resize -1<CR>", "Decrease window width" },
   },
   v = {
     ["<leader>gf"] = { "<cmd>OpenInGHFileLines <CR>", "Open file on remote" },
