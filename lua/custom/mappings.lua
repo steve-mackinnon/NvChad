@@ -41,6 +41,13 @@ M.telescope = {
       end,
       "Launch terminal",
     },
+    ["<leader>fm"] = {
+      function()
+        require("conform").format()
+        vim.lsp.buf.format { async = true }
+      end,
+      "Format code",
+    },
     ["<leader>gf"] = { "<cmd>OpenInGHFile <CR>", "Open file on remote" },
     ["<leader>cb"] = { "<cmd>BDelete! hidden<cr>", "Close all other buffers" },
     ["+"] = { "<cmd>resize +1<CR>", "Increase window height" },

@@ -161,6 +161,23 @@ local plugins = {
     opts = {}, -- your configuration
     lazy = false,
   },
+  {
+    "stevearc/conform.nvim",
+    config = function()
+      require("conform").setup {
+        formatters_by_ft = {
+          clojure = { "cljfmt" }, -- Use cljfmt for Clojure
+          edn = { "cljfmt" }, -- Support .edn files too
+          cljs = { "cljfmt" }, -- Support ClojureScript
+        },
+        format_on_save = {
+          timeout_ms = 500,
+          lsp_fallback = true,
+        },
+      }
+    end,
+    opts = {},
+  },
 }
 
 return plugins
