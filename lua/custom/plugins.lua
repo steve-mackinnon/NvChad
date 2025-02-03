@@ -178,6 +178,19 @@ local plugins = {
     end,
     opts = {},
   },
+  {
+    "julienvincent/nvim-paredit",
+    config = function()
+      require("nvim-paredit").setup()
+    end,
+  },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.rainbow"
+    end,
+  },
 }
 
 return plugins
