@@ -37,7 +37,7 @@ return {
         "lua-language-server", "stylua",
         "html-lsp", "css-lsp", -- html, cssls
         "typescript-language-server",
-        "gopls",
+        "gopls", "golangci-lint",
       }
       return opts
     end,
@@ -54,6 +54,19 @@ return {
           end
         end
       end)
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    event = { "BufWritePost", "BufReadPost" },
+    config = function()
+      require("lint").linters_by_ft = { go = { "golangcilint" } }
+      vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {
+        callback = function()
+          require("lint").try_lint()
+        end,
+      })
     end,
   },
 
