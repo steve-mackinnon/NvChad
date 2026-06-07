@@ -14,6 +14,11 @@ return {
   },
 
   {
+    "lewis6991/gitsigns.nvim",
+    opts = { current_line_blame = true },
+  },
+
+  {
     "sindrets/diffview.nvim",
     dependencies = "nvim-lua/plenary.nvim",
     cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewFileHistory" },
