@@ -25,6 +25,16 @@ return {
     opts = {},
   },
 
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      filters = {
+        dotfiles = false,
+        git_ignored = false,
+      },
+    },
+  },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
@@ -36,8 +46,11 @@ return {
       opts.ensure_installed = {
         "lua-language-server", "stylua",
         "html-lsp", "css-lsp", -- html, cssls
-        "typescript-language-server",
+        "typescript-language-server", "biome",
         "gopls", "golangci-lint",
+        "pyright", "ruff",
+        "sql-language-server", "sqlfluff",
+        "terraform-ls",
       }
       return opts
     end,
@@ -80,6 +93,10 @@ return {
         "html", "css",
         "javascript", "typescript", "tsx",
         "go", "gomod", "gosum", "gotmpl",
+        "python",
+        "javascript", "typescript", "tsx",
+        "sql",
+        "terraform", "hcl",
       },
     },
   },
