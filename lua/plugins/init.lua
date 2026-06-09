@@ -97,6 +97,7 @@ return {
         "javascript", "typescript", "tsx",
         "sql",
         "terraform", "hcl",
+        "starlark",
       },
     },
   },
