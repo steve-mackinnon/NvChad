@@ -49,6 +49,15 @@ return {
   },
 
   {
+    "kdheepak/lazygit.nvim",
+    cmd = { "LazyGit", "LazyGitConfig", "LazyGitCurrentFile", "LazyGitFilter", "LazyGitFilterCurrentFile" },
+    dependencies = "nvim-lua/plenary.nvim",
+    keys = {
+      { "<leader>gg", "<cmd>LazyGit<cr>", desc = "Open lazygit" },
+    },
+  },
+
+  {
     "sindrets/diffview.nvim",
     dependencies = "nvim-lua/plenary.nvim",
     cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewFileHistory" },
