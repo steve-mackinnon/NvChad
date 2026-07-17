@@ -1,6 +1,6 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", "gopls", "pyright", "ts_ls", "sqlls", "terraformls" }
+local servers = { "html", "cssls", "gopls", "pyright", "ts_ls", "sqlls", "terraformls", "clangd", "rust_analyzer" }
 vim.lsp.enable(servers)
 
 vim.filetype.add({ filename = { ["Tiltfile"] = "tiltfile" } })

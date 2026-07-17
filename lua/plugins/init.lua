@@ -90,6 +90,8 @@ return {
         "pyright", "ruff",
         "sql-language-server", "sqlfluff",
         "terraform-ls",
+        "clangd",
+        "rust-analyzer",
       }
       return opts
     end,
@@ -137,6 +139,8 @@ return {
         "sql",
         "terraform", "hcl",
         "starlark",
+        "c", "cpp",
+        "rust", "toml",
       },
     },
   },
