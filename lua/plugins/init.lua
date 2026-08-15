@@ -141,6 +141,7 @@ return {
         "starlark",
         "c", "cpp",
         "rust", "toml",
+        "janet_simple",
       },
     },
     config = function(_, opts)

@@ -34,11 +34,15 @@ vim.lsp.util.open_floating_preview = function(contents, syntax, opts)
   return bufnr, winid
 end
 
-local servers = { "html", "cssls", "gopls", "pyright", "ts_ls", "sqlls", "terraformls", "clangd", "rust_analyzer" }
+local servers =
+  { "html", "cssls", "gopls", "pyright", "ts_ls", "sqlls", "terraformls", "clangd", "rust_analyzer", "janet_lsp" }
 vim.lsp.enable(servers)
 
 vim.filetype.add({ filename = { ["Tiltfile"] = "tiltfile" } })
 vim.treesitter.language.register("starlark", "tiltfile")
+
+-- janet_simple parser handles the janet filetype
+vim.treesitter.language.register("janet_simple", "janet")
 
 vim.lsp.config("tilt", {
   cmd = { "tilt", "lsp", "start" },
